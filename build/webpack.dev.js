@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  devtool: false,
   entry: path.join(__dirname, "../src/main.js"),
   output: {
     filename: "bundle.js",
@@ -41,7 +42,10 @@ module.exports = {
   ],
   // watchOptions: {
   //   aggregateTimeout: 3000,
-  //   poll: 4000,
+  //   poll: 1000,
   //   ignored: /node_modules/,
   // }
+  devServer: {
+    hot: false,
+  },
 };
